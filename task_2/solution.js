@@ -28,7 +28,7 @@ function calcDiscount(sum, min, discount) {
     let discountSum;
 
     if (productsSum >= discountMinSum) {
-    discountSum = (discountPart / 100 * discountSum);
+    discountSum = (productsSum / 100 * discountSum);
     } else {
         discountSum = 0;
     }
@@ -52,7 +52,8 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
 
     totalSum = totalSum + shippingSum;
 
-    let freeShipping = !Boolean(shippingSum);
+    let freeShipping;
+    freeShipping = !Boolean(shippingSum);
 
     // Конец решения задачи №2.3.
 
