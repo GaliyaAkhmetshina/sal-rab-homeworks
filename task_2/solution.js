@@ -9,7 +9,6 @@ function calcShipping(sum, min, shipping) {
 
     if (productsSum == 0 || productsSum >= freeShippingMinSum) {
     shippingSum = 0;
-
     } else {
         shippingSum = shippingPrice;
     }
@@ -28,7 +27,7 @@ function calcDiscount(sum, min, discount) {
     let discountSum;
 
     if (productsSum >= discountMinSum) {
-    discountSum = (productsSum / 100 * discountSum);
+    discountSum = (productsSum / 100 * discountPart);
     } else {
         discountSum = 0;
     }
@@ -53,6 +52,7 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     totalSum = totalSum + shippingSum;
 
     let freeShipping;
+    
     freeShipping = !Boolean(shippingSum);
 
     // Конец решения задачи №2.3.
